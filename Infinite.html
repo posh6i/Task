@@ -27,14 +27,31 @@ body {
     animation-iteration-count: 6;
 }
 ul { margin-left: 0; padding-left: 2em; list-style-type: none; }
-        li:before {
-            content: "\2713";
+    
+    li{
+        display: inline;
+
+    }
+    .bullet{
+        display: inline;
+    }
+
+        .bullet:before{
+            content: '\2713';
             text-align: left;
             display: inline-block;
             padding: 0;
             margin: 0 0 0 -2em;
-            width: 2em;
+            width: 2em;}
+
+        li:hover .bullet:before{    
+            animation: change .2s ease-in-out both;
         }
+        @keyframes change{
+            0%{content: '\2713'; opacity: 0;}
+            100%{content: '\2712'; opacity: 1;}
+        }
+        
 
 
 /* Safari 4.0 - 8.0 */
@@ -60,13 +77,18 @@ ul { margin-left: 0; padding-left: 2em; list-style-type: none; }
 <div id="box">
 
 </div>
+
 <h1 align="center"> Hello World!! The list of Phone companies is given below:
 <ul>
-<li>Samsung</li>
-<li align="center"> Apple</li>
-<li>Blackberry</li>
-<li>Nokia</li>
-<li>HTC</li>
+<li><div class="bullet">Samsung</div></li><br>
+
+<li align="center"><div class="bullet">Apple</div></li><br>
+
+<li><div class="bullet">HTC</div></li>
+<br>
+<li><div class="bullet">Nokia</div></li>
+<br>
+<li><div class="bullet">ONE PLUS</div></li>
 </ul>
 </h1>
 
