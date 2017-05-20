@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    height: 3555px;
+    width: 1500px;
+    background: blue; /* For browsers that do not support gradients */    
+    background: -webkit-radial-gradient(red, yellow, purple); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(red, yellow, purple); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(red, yellow, purple); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(red, yellow, purple); /* Standard syntax (must be last) */
+    background-repeat: repeat-y;
+    background-repeat: repeat-x;
+}
+
+#box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: relative;
+    -webkit-animation-name: boxes; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 10s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-iteration-count: 6; /* Safari 4.0 - 8.0 */
+    animation-name: boxes;
+    animation-duration: 10s;
+    animation-iteration-count: 6;
+}
+ul { margin-left: 0; padding-left: 2em; list-style-type: none; }
+        li:before {
+            content: "\2713";
+            text-align: left;
+            display: inline-block;
+            padding: 0;
+            margin: 0 0 0 -2em;
+            width: 2em;
+        }
+
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes boxes {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:5000px; top:0px;}
+    50%  {background-color:blue; left:5000px; top:3000px;}
+    75%  {background-color:green; left:0px; top:3000px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes boxes {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:5000px; top:0px;}
+    50%  {background-color:blue; left:5000px; top:3000px;}
+    75%  {background-color:green; left:0px; top:3000px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+</style>
+</head>
+<body>
+<div id="box">
+
+</div>
+<h1 align="center"> Hello World!! The list of Phone companies is given below:
+<ul>
+<li>Samsung</li>
+<li align="center"> Apple</li>
+<li>Blackberry</li>
+<li>Nokia</li>
+<li>HTC</li>
+</ul>
+</h1>
+
+
+
+
+
+
+</body>
+</html>
