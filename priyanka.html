@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barrio|Kumar+One|Lobster|Montserrat+Subrayada" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
@@ -13,6 +14,7 @@
       font: 20px Montserrat, sans-serif;
       line-height: 1.8;
       color: #f5f6f7;
+      transition: all 1s; 
   }
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
@@ -57,18 +59,99 @@
   .list-inline li a:hover {
       color: #1abc9c !important;
   }
+
+ h2{
+    font-family: 'Barrio', cursive;
+    font-size: 70px;
+ }
+
+ .progBar1{
+  animation: animateprog1 2s ease-in-out both;
+ }
+
+@keyframes animateprog1 {
+  0%{width: 0;}
+
+  100%{width: 40%;}
+
+}
+ .progBar2{
+  animation: animateprog2 2s ease-in-out both;
+ }
+
+@keyframes animateprog2 {
+  0%{width: 0;}
+ 
+  100%{width: 50%;};
+
+}
+ .progBar3{
+  animation: animateprog3 2s ease-in-out both;
+ }
+
+@keyframes animateprog3 {
+  0%{width: 0;}
+ 
+  100%{width: 60%;}
+
+}
+ .progBar4{
+  animation: animateprog4 2s  ease-in-out both;
+ }
+
+@keyframes animateprog4 {
+  0%{width: 0;}
+ 
+  100%{width: 70%;}
+
+}
+.navbar-header{
+  font-family: 'Lobster', cursive;
+
+}
+.progress{
+  border-radius: 2%;
+  height: 40px;
+
+}
+.progress div{
+  padding-top: 10px;
+
+  text-align: center;
+  font-size: 28px;
+}
+#naam{
+  font-family: 'Montserrat Subrayada', sans-serif;
+}
+#photoo{
+  transition: all 500ms ease-in;
+  box-shadow: 0px 20px 10px -10px rgba(0,0,0,0.6);
+}
+#photoo:hover{
+    transition: all 500ms both ease-in ;
+    box-shadow: 0px 40px 20px -20px rgba(0,0,0,0.4);
+    transform: translateY(-10px);
+ } 
+@keyframes scaleIt {
+  0%{transform: scale(1);
+  }
+  80%{transform: scale(1.4);}
+   100%{transform: scale(1.25);}
+} 
+
+
   </style>
   
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-<nav class="navbar navbar-inverse navbar-fixed-top"> <!---Navigation bar---->
+<nav class="navbar navbar-inverse navbar-fixed-top"> <!---Navigation bar-->
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>   
-         <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                       
       </button>
@@ -89,9 +172,10 @@
 </nav>
 <div class="container-fluid bg-1 text-center">
 <div id="About">
-  <h3 class="margin"> About Me</h3>
-  <img src="my photo.jpg" class="img-responsive img-circle margin" style="display:inline" alt="My Photo" width="250" height="350">
-  <h1>Priyanka Joshi</h1>
+  <h2 class="margin"> About Me</h3>
+  <img src="star.jpg" class="img-responsive img-circle margin" style="display:inline" alt="My Photo" width="250" height="350" 
+  id="photoo">
+  <h1 id="naam">Priyanka Joshi</h1>
   <h4>Full Stack Developer</h4>
 </div>
 </div>
@@ -107,22 +191,22 @@
   <div id="lan">
   <h2 class="margin"> Skills and Proficiency </h2>
   <div class="progress">
-    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+    <div class="progress-bar progress-bar-info" id="C" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" >
       C&C++
     </div>
   </div>
   <div class="progress">
-    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">
+    <div class="progress-bar progress-bar-success" id="JS" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" >
       JS & Jquery
     </div>
   </div>
   <div class="progress">
-    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+    <div class="progress-bar progress-bar-warning" id="PHP" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" >
       PHP
     </div>
   </div>
   <div class="progress">
-    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+    <div class="progress-bar progress-bar-danger" id="WEBy" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" >
       HTML&CSS
     </div>
   </div>
@@ -139,7 +223,7 @@
 </div>
 <div class="container-fluid bg-1 text-center">  
 <div id="career">  
-  <h3 class="margin">Career and Experience</h3>
+  <h2 class="margin">Career and Experience</h3>
   <p> I am pursuing my Dual Degree(B.Tech + M.Tech) from Indian Institute of Technology, Madras. I have deep interest in internet technologies and I am really enthusiastic about such stuffs. I am mainly a front-end developer, but can work with back-end langyages too. I have been the part of T5E webops team last semester.</p>
   
 </div>
@@ -166,6 +250,28 @@
 <footer class="container-fluid bg-6 text-center">
   <p>Developed by Priyanka Joshi.</p> 
 </footer>
+<script src="jquery.waypoints.min.js"></script>
+ <script >
+  var $Clevel = $("#C");
+  var $Jslevel = $('#JS');
+  var $phplevel = $('#PHP');
+  var $webLevel = $('#WEBy');
+  var $win1 = $(".bg-3");
+ 
+  $win1.waypoint(function(direction){
+    if (direction == "down")
+    {
+      console.log("suckIt");
+      $Clevel.addClass("progBar1");
+     $Jslevel.addClass("progBar2");
+      $phplevel.addClass("progBar3");
+      $webLevel.addClass("progBar4");
+    }
+    
+
+  }, {offset : "50%"});
+ </script>
+
 
 </body>
 </html>
