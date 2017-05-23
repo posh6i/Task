@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="GroceryApp" >
+  <head>
+    <title>first hand at angular</title>
+    <style>
+
+    ul {
+      list-style: none;
+      color: #222;
+
+
+    }
+    li {
+      border: 1px solid grey;
+        border-radius: 10px;
+          box-shadow: 2px 2px 2px rgba(20,20,20,0.5);
+    }
+    div{
+      display: inline-block;
+      padding: 10px;
+      font-size: 25px;
+    }
+    .name{
+      width: 120px;
+    }
+    .price{ width: 40px;
+
+    }
+    .NetPrice{
+      width: 100px;
+      text-align: center;
+    }
+    .quantity{
+      width: 180px;
+      text-align: center;
+    }
+    input{
+      width: 180px;
+      background: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #777;
+      border: 0;
+      box-shadow: 2px 2px 2px rgba(20,20,20,0.1);
+      font-size: 20px;
+}
+    }
+    .GroceryList{
+      position: absolute;
+      left: 450px;
+    }
+    .Total1{
+      position: relative;
+      width: 100px;
+      left: 419px;
+      text-align: center;
+      border-right: 1px solid;
+      border-bottom: 1px solid;
+      border-left: 1px solid;
+        border-radius: 10px;
+        box-shadow: 2px 2px 2px rgba(20,20,20,0.5);
+    }
+    .Discount{
+      position: relative;
+      left: 300px;
+    }
+    .GrandT{
+      position: relative;
+      bottom: 2px;
+    }
+    </style>
+    <script src="library/angular.min.js"></script>
+    <script src="app/app.js"></script>
+
+  </head>
+  <body >
+
+    <div ng-controller="GroceryControl" class="GroceryList">
+      <ul>
+        <li id="HeaderList">
+            <div class="name"><strong>Item</strong></div>
+            <div class="price">
+              <strong>Price</strong>
+            </div>
+            <div class="quantity">
+              <strong>Quantity</strong>
+            </div>
+            <div class="NetPrice">
+                <strong>Total Price </strong>
+            </div>
+        </li>
+        <li ng-repeat='Item in Groceries'>
+          <div class="name">
+            {{Item.name}}
+          </div>
+          <div class="price">
+            {{Item.price | currency:"₹":0}}
+          </div>
+          <input type='integer' ng-model='order' placeholder="enter the quantity" />
+          <div class="NetPrice">
+            {{Item.net=Item.price * order}}
+          </div>
+
+        </li>
+        <div class="Total1">
+        {{Total = Groceries[0].net + Groceries[1].net + Groceries[2].net + Groceries[3].net + Groceries[4].net  + Groceries[5].net}}
+      </div>
+      </ul>
+      <div class="Discount">
+      <strong>Discount</strong>
+
+      <input class="DiscountInp" ng-model= "discount" type="number" min="1" max="50" placeholder="Discount" />
+  </div>
+  <br />
+        <div class="GrandT">
+
+  Your Grand Total :   {{GrandTotal= (1-discount/100)*Total | currency:"₹":0}}
+        </div>
+    </div>
+  </body>
+</html>
